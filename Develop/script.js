@@ -28,9 +28,9 @@ function getInputFromUser(){
 }
 
 //checking whether the password length got from user is a valid number
-// and it is between 1 and 50
+// and it is between 8 and 128
 function isValid(len){
-  if(len<50 && len>0){
+  if(len<128 && len>=8){
     passwordLength===len;
     return true;
   }
@@ -41,7 +41,7 @@ function isValid(len){
 
 //getting password length from user
 function getPasswordLength(){
-  passwordLength=prompt("How many characters do you want in your password? Select a number from 1 to 50");
+  passwordLength=prompt("How many characters do you want in your password? Select a number from 8 to 128");
   if(isValid(passwordLength)){
     getInputFromUser();
   }
