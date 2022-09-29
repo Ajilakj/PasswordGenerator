@@ -1,13 +1,14 @@
 // Assignment Code
 
 //global variables
-var possibleCharacters='';
+var possibleCharacters;
 var passwordLength;
 var generateBtn = document.querySelector("#generate");
 
 
 //getting input from user and setting possible characters
 function getInputFromUser(){
+  possibleCharacters="";
   var userSelection=prompt("Type 'l' for lowercase letters: Type 'n' for numbers: Type 'u' for uppercase letters: Type 's' for symbols.");
     if(userSelection.includes('l') || userSelection.includes('L') ){
       possibleCharacters="abcdefghijklmnopqrstuvwxyz";
@@ -24,7 +25,6 @@ function getInputFromUser(){
     else{
       getInputFromUser();
     }
-  return possibleCharacters;
 }
 
 //checking whether the password length got from user is a valid number
