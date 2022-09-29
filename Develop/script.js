@@ -5,21 +5,35 @@ var possibleCharacters='';
 var passwordLength;
 var generateBtn = document.querySelector("#generate");
 
+//checking whether the password length got from user is a valid number
+// and it is between 1 and 50
+function isValid(len){
+  if(len<50 && len>0){
+    passwordLength===len;
+    return true;
+  }
+  else{
+    getInputFromUser(); 
+  }  
+}
+
 //getting input from user and setting possible characters
 function getInputFromUser(){
-  passwordLength=prompt("How many characters do you want in your password?");
-  var userSelection=prompt("Type 'l' for lowercase letters: Type 'n' for numbers: Type 'u' for uppercase letters: Type 's' for symbols.");
-  if(userSelection.includes('l') ||userSelection.includes('L') ){
-    possibleCharacters="abcdefghijklmnopqrstuvwxyz";
-  }
-  if(userSelection.includes('n') || userSelection.includes('N')){
-      possibleCharacters=possibleCharacters+'1234567890';
-  }
-  if(userSelection.includes('u') || userSelection.includes('U') ){
-    possibleCharacters=possibleCharacters+"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  }
-  if(userSelection.includes('s') || userSelection.includes('S')){
-    possibleCharacters=possibleCharacters+"!@#$%^&*(){}[]<>?";
+  passwordLength=prompt("How many characters do you want in your password? Select a number from 1 to 50");
+  if(isValid(passwordLength)){
+    var userSelection=prompt("Type 'l' for lowercase letters: Type 'n' for numbers: Type 'u' for uppercase letters: Type 's' for symbols.");
+    if(userSelection.includes('l') || userSelection.includes('L') ){
+      possibleCharacters="abcdefghijklmnopqrstuvwxyz";
+    }
+    if(userSelection.includes('n') || userSelection.includes('N')){
+        possibleCharacters=possibleCharacters+"1234567890";
+    }
+    if(userSelection.includes('u') || userSelection.includes('U') ){
+      possibleCharacters=possibleCharacters+"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    }
+    if(userSelection.includes('s') || userSelection.includes('S')){
+      possibleCharacters=possibleCharacters+"!@#$%^&*(){}[]<>?";
+    }
   }
   return possibleCharacters;
 }
