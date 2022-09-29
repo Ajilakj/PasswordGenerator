@@ -5,23 +5,10 @@ var possibleCharacters='';
 var passwordLength;
 var generateBtn = document.querySelector("#generate");
 
-//checking whether the password length got from user is a valid number
-// and it is between 1 and 50
-function isValid(len){
-  if(len<50 && len>0){
-    passwordLength===len;
-    return true;
-  }
-  else{
-    getInputFromUser(); 
-  }  
-}
 
 //getting input from user and setting possible characters
 function getInputFromUser(){
-  passwordLength=prompt("How many characters do you want in your password? Select a number from 1 to 50");
-  if(isValid(passwordLength)){
-    var userSelection=prompt("Type 'l' for lowercase letters: Type 'n' for numbers: Type 'u' for uppercase letters: Type 's' for symbols.");
+  var userSelection=prompt("Type 'l' for lowercase letters: Type 'n' for numbers: Type 'u' for uppercase letters: Type 's' for symbols.");
     if(userSelection.includes('l') || userSelection.includes('L') ){
       possibleCharacters="abcdefghijklmnopqrstuvwxyz";
     }
@@ -34,13 +21,36 @@ function getInputFromUser(){
     if(userSelection.includes('s') || userSelection.includes('S')){
       possibleCharacters=possibleCharacters+"!@#$%^&*(){}[]<>?";
     }
-  }
+    else{
+      getInputFromUser();
+    }
   return possibleCharacters;
+}
+
+//checking whether the password length got from user is a valid number
+// and it is between 1 and 50
+function isValid(len){
+  if(len<50 && len>0){
+    passwordLength===len;
+    return true;
+  }
+  else{
+    getPasswordLength(); 
+  }  
+}
+
+//getting password length from user
+function getPasswordLength(){
+  passwordLength=prompt("How many characters do you want in your password? Select a number from 1 to 50");
+  if(isValid(passwordLength)){
+    getInputFromUser();
+  }
 }
 
 //generating a password by selecting random characters from possible characters
 function generatePassword(){
-  var possibleCharacters=getInputFromUser();
+  getPasswordLength();
+  //var possibleCharacters=getInputFromUser();
   var length=possibleCharacters.length-1;
   var randomCharacters='';
   for(var i=0;i<passwordLength;i++){
