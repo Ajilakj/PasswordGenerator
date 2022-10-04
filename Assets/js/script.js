@@ -9,20 +9,23 @@ var generateBtn = document.querySelector("#generate");
 //getting input from user and setting possible characters
 function getInputFromUser(){
   possibleCharacters="";
-  var userSelection=prompt("Type 'l' for lowercase letters: Type 'n' for numbers: Type 'u' for uppercase letters: Type 's' for symbols.");
-    if(userSelection.includes('l') || userSelection.includes('L') ){
+  var upperCase=confirm("Do you want uppercase letters in your password? If yes Select 'ok' OR select 'cancel'");
+  var LowerCase=confirm("Do you want lowercase letters in your password? If yes Select 'ok' OR select 'cancel'");
+  var numbers=confirm("Do you want numbers in your password? If yes Select 'ok' OR select 'cancel'");
+  var symbols=confirm("Do you want special characters in your password? If yes Select 'ok' OR select 'cancel'");
+    if(LowerCase){
       possibleCharacters="abcdefghijklmnopqrstuvwxyz";
     }
-    if(userSelection.includes('n') || userSelection.includes('N')){
+    if(numbers){
         possibleCharacters=possibleCharacters+"1234567890";
     }
-    if(userSelection.includes('u') || userSelection.includes('U') ){
+    if(upperCase) {
       possibleCharacters=possibleCharacters+"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     }
-    if(userSelection.includes('s') || userSelection.includes('S')){
+    if(symbols){
       possibleCharacters=possibleCharacters+"!@#$%^&*(){}[]<>?";
     }
-    else{
+    if(possibleCharacters==="") {
       getInputFromUser();
     }
 }
@@ -50,7 +53,6 @@ function getPasswordLength(){
 //generating a password by selecting random characters from possible characters
 function generatePassword(){
   getPasswordLength();
-  //var possibleCharacters=getInputFromUser();
   var length=possibleCharacters.length-1;
   var randomCharacters='';
   for(var i=0;i<passwordLength;i++){
