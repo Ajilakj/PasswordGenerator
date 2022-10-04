@@ -4,7 +4,7 @@
 N/A
 
 ![](./assets/images/screenshot.png)
-[To visit my passwordGenerator Web Site]( https://ajilakj.github.io/passwordGenerator/)
+[To visit my passwordGenerator Web Site]( https://ajilakj.github.io/PasswordGenerator/)
 
 ## Usage
 - To use this website you can click the generate password button.
