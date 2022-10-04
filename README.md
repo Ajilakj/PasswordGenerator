@@ -3,7 +3,7 @@
 ## Installation
 N/A
 
-![](./assets/images/screenshot.png)
+![](./Assets/images/screenshot.png)
 [To visit my passwordGenerator Web Site]( https://ajilakj.github.io/PasswordGenerator/)
 
 ## Usage
