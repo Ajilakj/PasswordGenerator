@@ -3,6 +3,9 @@
 ## Installation
 N/A
 
+![](./assets/images/screenshot.png)
+[To visit my passwordGenerator Web Site]( https://ajilakj.github.io/passwordGenerator/)
+
 ## Usage
 - To use this website you can click the generate password button.
 - You will prompt to select a number between 8 and 128. if the number is not in the range or you enter something other than a number the same prompt again will appear for user to enter the password length
